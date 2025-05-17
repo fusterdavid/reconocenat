@@ -1,0 +1,138 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c5d3c;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+#score-area {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+#image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#species-image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #eee; /* Placeholder background */
+}
+
+.attribution {
+    font-size: 0.7em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #45a049;
+}
+
+#feedback-area {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#feedback-message.correct {
+    color: #388E3C;
+}
+
+#feedback-message.incorrect {
+    color: #D32F2F;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+footer a {
+    color: #2c5d3c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Placeholder image styling */
+#species-image[src="placeholder.jpg"] {
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-style: italic;
+}
+#species-image[src="placeholder.jpg"]::after {
+    content: "Cargando imagen...";
+}

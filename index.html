@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoReto Natural</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>EcoReto Natural</h1>
+        <p>Identifica el reino y la especie</p>
+         <p>Observadores de Aves en Libertad-Catriel-25 de mayo- Puelén</p>
+    </header>
+
+    <main>
+        <div id="score-area">
+            EcoDiner: <span id="ecodiner">0</span>
+        </div>
+
+        <div id="image-container">
+            <img id="species-image" src="placeholder.jpg" alt="Especie a identificar">
+            <p id="image-attribution" class="attribution"></p>
+        </div>
+
+        <div id="input-area">
+            <div class="form-group">
+                <label for="kingdom-select">Reino:</label>
+                <select id="kingdom-select">
+                    <option value="">Selecciona un reino...</option>
+                    <option value="Animalia">Animalia (Animales)</option>
+                    <option value="Plantae">Plantae (Plantas)</option>
+                    <option value="Fungi">Fungi (Hongos)</option>
+                    <option value="Protista">Protista</option>
+                    <option value="Monera">Monera (Bacterias, Arqueas)</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="species-input">Especie (nombre común o científico):</label>
+                <input type="text" id="species-input" placeholder="Nombre de la especie">
+            </div>
+            <button id="submit-button">Identificar</button>
+        </div>
+
+        <div id="feedback-area">
+            <p id="feedback-message"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Juego creado con datos de <a href="https://www.inaturalist.org" target="_blank">iNaturalist</a></p>
+    </footer>
+      <p>Creditos: David Alejandro Fuster</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
