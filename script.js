@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentEcodiner = 0;
     let currentObservation = null;
 
-    // --- iNaturalist API configurada para 50 km alrededor de Catriel, Río Negro ---
-    const INATURALIST_API_URL = 'https://api.inaturalist.org/v1/observations?quality_grade=research&photos=true&licensed=true&license=cc-by,cc-by-nc,cc0&taxon_id=1,47126,47170&per_page=50&order=desc&order_by=created_at&locale=es&lat=-37.877778&lng=-67.791667&radius=50';
+    // --- iNaturalist API configurada para 100 km alrededor de Catriel, Río Negro ---
+    const INATURALIST_API_URL = 'https://api.inaturalist.org/v1/observations?quality_grade=research&photos=true&licensed=true&license=cc-by,cc-by-nc,cc0&taxon_id=1,47126,47170&per_page=50&order=desc&order_by=created_at&locale=es&lat=-37.877778&lng=-67.791667&radius=100';
 
     async function fetchNewObservation() {
         feedbackMessage.textContent = 'Cargando nueva imagen...';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error al obtener observación de iNaturalist:', error);
             feedbackMessage.textContent = `Error al cargar: ${error.message}. Intentando de nuevo...`;
-            setTimeout(fetchNewObservation, 3000);
+            setTimeout(fetchNewObservation, 10000);
         } finally {
             submitButton.disabled = false;
         }
@@ -90,16 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackMessage.textContent = `¡Reino Correcto! Pero la especie es incorrecta. La especie era: ${currentObservation.taxon.name}${commonName ? ` (${commonName})` : ''}`;
             feedbackMessage.className = 'incorrect';
             currentEcodiner += 2;
-            setTimeout(fetchNewObservation, 3000);
+            setTimeout(fetchNewObservation, 10000);
         } else if (isSpeciesCorrect) {
             feedbackMessage.textContent = `¡Especie Correcta! Pero el reino es incorrecto. El reino era: ${correctKingdom}`;
             feedbackMessage.className = 'incorrect';
             currentEcodiner += 5;
-            setTimeout(fetchNewObservation, 3000);
+            setTimeout(fetchNewObservation, 10000);
         } else {
             feedbackMessage.textContent = `Incorrecto. El reino era "${correctKingdom}" y la especie "${currentObservation.taxon.name}${commonName ? ` (${commonName})` : ''}".`;
             feedbackMessage.className = 'incorrect';
-            setTimeout(fetchNewObservation, 3500);
+            setTimeout(fetchNewObservation, 10000);
         }
 
         ecodinerDisplay.textContent = currentEcodiner;
